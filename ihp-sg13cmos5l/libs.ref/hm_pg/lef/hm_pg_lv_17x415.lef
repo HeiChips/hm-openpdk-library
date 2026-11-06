@@ -5,14 +5,14 @@ VERSION 5.7 ;
 MACRO hm_pg_lv_17x415
   CLASS BLOCK ;
   FOREIGN hm_pg_lv_17x415 ;
-  ORIGIN 0.100 158.610 ;
-  SIZE 17.100 BY 415.000 ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 17.000 BY 415.000 ;
   PIN VPWR
     DIRECTION INOUT ;
     USE POWER ;
     PORT
       LAYER Metal4 ;
-        RECT 0.000 -158.610 7.000 256.390 ;
+        RECT 0.000 0.000 7.000 415.000 ;
     END
   END VPWR
   PIN GND
@@ -20,7 +20,7 @@ MACRO hm_pg_lv_17x415
     USE GROUND ;
     PORT
       LAYER Metal4 ;
-        RECT 7.300 -158.610 9.700 256.390 ;
+        RECT 7.300 0.000 9.700 415.000 ;
     END
   END GND
   PIN GPWR
@@ -28,7 +28,7 @@ MACRO hm_pg_lv_17x415
     USE POWER ;
     PORT
       LAYER Metal4 ;
-        RECT 10.000 -158.610 17.000 256.390 ;
+        RECT 10.000 0.000 17.000 415.000 ;
     END
   END GPWR
   PIN CTRL
@@ -37,18 +37,18 @@ MACRO hm_pg_lv_17x415
     ANTENNAGATEAREA 1.560000 ;
     PORT
       LAYER Metal3 ;
-        RECT 8.235 255.890 10.635 256.390 ;
+        RECT 8.235 414.500 10.635 415.000 ;
     END
   END CTRL
   OBS
       LAYER GatPoly ;
-        RECT 0.030 -158.370 16.760 255.750 ;
+        RECT 0.030 0.240 16.760 414.360 ;
       LAYER Metal1 ;
-        RECT 0.030 -158.370 16.760 255.750 ;
+        RECT 0.030 0.240 16.760 414.360 ;
       LAYER Metal2 ;
-        RECT 0.000 -157.440 16.220 256.390 ;
+        RECT 0.000 1.170 16.220 415.000 ;
       LAYER Metal3 ;
-        RECT 0.000 -158.610 17.000 255.580 ;
+        RECT 0.000 0.000 17.000 414.190 ;
   END
 END hm_pg_lv_17x415
 END LIBRARY
