@@ -1,42 +1,42 @@
-.subckt hm_pg_hv_17x200 GPWR VAPWR VDPWR CTRL VGND
-x2 VAPWR VDPWR ctrl H_crtl_p H_crtl_n VGND lv2hv
-XM4 ctrl_n H_crtl_p VGND VGND sg13_hv_nmos w=4u l=0.45u ng=1 m=1 mm_ok=1
+.subckt hm_pg_hv_17x200 GPWR VAPWR VDPWR CTRL GND
+x2 VAPWR VDPWR ctrl H_crtl_p H_crtl_n GND lv2hv
+XM4 ctrl_n H_crtl_p GND GND sg13_hv_nmos w=4u l=0.45u ng=1 m=1 mm_ok=1
 XM5 ctrl_n H_crtl_p VAPWR VAPWR sg13_hv_pmos w=8u l=0.45u ng=1 m=1 mm_ok=1
 XM1 GPWR ctrl_n VAPWR VAPWR sg13_hv_pmos w=1544.79u l=0.4u ng=233 m=2 mm_ok=1
-x3 VGND GPWR ctrl_n hv_dischg
+x3 GND GPWR ctrl_n hv_dischg
 .ends
 
-.subckt lv2hv VAPWR VDPWR in out_p out_n VGND
-XM1 in_n in VGND VGND sg13_lv_nmos w=1u l=0.13u ng=1 m=1 mm_ok=1
+.subckt lv2hv VAPWR VDPWR in out_p out_n GND
+XM1 in_n in GND GND sg13_lv_nmos w=1u l=0.13u ng=1 m=1 mm_ok=1
 XM2 in_n in VDPWR VDPWR sg13_lv_pmos w=2u l=0.13u ng=1 m=1 mm_ok=1
-XM3 in_p in_n VGND VGND sg13_lv_nmos w=1u l=0.13u ng=1 m=1 mm_ok=1
+XM3 in_p in_n GND GND sg13_lv_nmos w=1u l=0.13u ng=1 m=1 mm_ok=1
 XM4 in_p in_n VDPWR VDPWR sg13_lv_pmos w=2u l=0.13u ng=1 m=1 mm_ok=1
-XM5 out_p net1 VGND VGND sg13_hv_nmos w=1u l=0.45u ng=1 m=1 mm_ok=1
-XM6 net1 in_p VGND VGND sg13_hv_nmos w=3.2u l=0.45u ng=1 m=1 mm_ok=1
+XM5 out_p net1 GND GND sg13_hv_nmos w=1u l=0.45u ng=1 m=1 mm_ok=1
+XM6 net1 in_p GND GND sg13_hv_nmos w=3.2u l=0.45u ng=1 m=1 mm_ok=1
 XM7 out_p net1 VAPWR VAPWR sg13_hv_pmos w=2u l=0.45u ng=1 m=1 mm_ok=1
 XM8 net1 net2 VAPWR VAPWR sg13_hv_pmos w=1u l=0.45u ng=1 m=1 mm_ok=1
 XM9 net2 net1 VAPWR VAPWR sg13_hv_pmos w=1u l=0.45u ng=1 m=1 mm_ok=1
-XM10 net2 in_n VGND VGND sg13_hv_nmos w=3.2u l=0.45u ng=1 m=1 mm_ok=1
-XM11 out_n net2 VGND VGND sg13_hv_nmos w=1u l=0.45u ng=1 m=1 mm_ok=1
+XM10 net2 in_n GND GND sg13_hv_nmos w=3.2u l=0.45u ng=1 m=1 mm_ok=1
+XM11 out_n net2 GND GND sg13_hv_nmos w=1u l=0.45u ng=1 m=1 mm_ok=1
 XM12 out_n net2 VAPWR VAPWR sg13_hv_pmos w=2u l=0.45u ng=1 m=1 mm_ok=1
 .ends
 
-.subckt hv_dischg VGND GPWR gate
-XM1 GPWR gate net1 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM2 net1 gate net2 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM3 net2 gate net3 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM4 net3 gate net4 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM5 net4 gate net5 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM6 net5 gate net6 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM7 net6 gate VGND VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+.subckt hv_dischg GND GPWR gate
+XM1 GPWR gate net1 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM2 net1 gate net2 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM3 net2 gate net3 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM4 net3 gate net4 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM5 net4 gate net5 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM6 net5 gate net6 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM7 net6 gate GND GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
 
-XM8 GPWR gate net7 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM9 net7 gate net8 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM10 net8 gate net9 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM11 net9 gate net10 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM12 net10 gate net11 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM13 net11 gate net12 VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
-XM14 net12 gate VGND VGND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM8 GPWR gate net7 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM9 net7 gate net8 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM10 net8 gate net9 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM11 net9 gate net10 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM12 net10 gate net11 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM13 net11 gate net12 GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
+XM14 net12 gate GND GND sg13_hv_nmos w=1u l=0.65u ng=1 m=1 mm_ok=1
 .ends
 
 .end
